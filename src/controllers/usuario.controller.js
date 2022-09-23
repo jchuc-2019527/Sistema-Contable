@@ -2,6 +2,7 @@
 
 const db = require("../../configs/pooldb");
 const {validateData, userExist, encrypPassword, checkPassword} = require('../utils/validate.utils');
+const {createToken} = require('../services/token.services');
 
 exports.test = (req, res) => {
   return res.send({ message: "Test user controller is running" });
@@ -33,7 +34,7 @@ exports.newUser = async(req, res) => {
             return res.status(409).send({message: 'User already use'})
           }
         }else{
-           return res.status(402).send({message: msg});
+           return res.status(402).send(msg);
         }
     }catch(err) {
     console.log(err);
@@ -42,7 +43,7 @@ exports.newUser = async(req, res) => {
 }
 
 
-exports.logn = async(req, res) => {
+exports.login = async(req, res) => {
   try{
     const body = req.body;
     const data = {
@@ -52,9 +53,16 @@ exports.logn = async(req, res) => {
     let msg = validateData(data);
     if(!msg) {
       let search = await userExist(req.body.username);
-      if(search && await checkPassword(body.claveUsuario, search.claveUsuario))
+      const userLogin = search.find(username => username.username === data.username)
+      console.log(userLogin)
+      if(userLogin && await checkPassword(body.claveUsuario, search.claveUsuario)) {
+       const token = await createToken(search);
+       return res.status(200).send({message: 'Log in successfuly', userLogin, token})
+      }else{
+        return res.status(400).send({message: 'Username or password incorrect'})
+      }
     }else{
-      return res.status(402).send({message: msg})
+      return res.status(402).send(msg)
     }
   }catch(err) {
     console.log(err);

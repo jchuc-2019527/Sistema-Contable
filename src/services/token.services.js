@@ -2,17 +2,17 @@
 
 const jwt = require('jwt-simple');
 const moment = require('moment');
-const key = 'Secret Key';
+const key = 'SecretKey';
 
-exports.createToken = async(usuario) =>{
+exports.createToken = async(user) =>{
     try{
         const payload = {
-            sub: usuario._codigoUsuario,
-            nombre: usuario.nombre,
-            apellido: usuario.apellido,
-            username: usuario.username,
-            correo: usuario.correo,
-            role: usuario.role,
+            sub: user._codigoUsuario,
+            nombre: user.nombre,
+            apellido: user.apellido,
+            username: user.username,
+            correo: user.correo,
+            role: user.role,
             iat: moment().unix(),
             exp: moment().add(5, 'hours').unix()
         }

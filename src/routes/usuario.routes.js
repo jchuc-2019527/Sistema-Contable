@@ -8,5 +8,6 @@ const api =express();
 api.get('/test', user.test);
 api.get('/users', user.users);
 api.post('/newUser', user.newUser);
+api.post('/login', user.login)
 
 module.exports = api;

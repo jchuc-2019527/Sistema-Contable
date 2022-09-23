@@ -31,15 +31,15 @@ exports.encrypPassword = async(password) => {
        return await bcrypt.hashSync(password);
     }catch(err){
         console.log(err);
-        return res.status(500).send({message: 'Error encryptPassword'});
+        return err;
     }
 }
 
 exports.checkPassword = async(password, hashSync) => {
     try{
-        return bcrypt.compareSync(password, hashSync)
+        return await bcrypt.compareSync(password, hashSync)
     }catch(err) {
         console.log(err);
-        return res.status(500).send({message: 'Error en el servidor checkPassword'});
+        return err;
     }
 }
