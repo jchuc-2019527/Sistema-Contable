@@ -1,7 +1,9 @@
 'use strict'
 
 const bcrypt = require('bcrypt-nodejs');
-const db = require('../../configs/pooldb')
+const db = require('../../configs/pooldb');
+
+
 exports.validateData = (data) => {
     let keys = Object.keys(data), msg= '';
     for(let key of keys) {
@@ -38,6 +40,36 @@ exports.usersExists= () => {
     }catch(err) {
         console.log(err);
         return err 
+    }
+}
+
+exports.nombreEmpresaExist = () => {
+    try{
+        const empresaExist = 'SELECT E.nombreEmpresa FROM EmpresaMaestro E';
+        return new Promise((resolve, reject) => {
+            db.query(empresaExist, (err, resu) => {
+                if(err) throw err;
+                return resolve(resu);
+            })
+        })
+    }catch(err) {
+     console.log(err);
+     return err;   
+    }
+}
+
+exports.empresasMaestros = () => {
+    try{
+        const empresaExist = 'SELECT * FROM EmpresaMaestro ';
+        return new Promise((resolve, reject) => {
+            db.query(empresaExist, (err, resu) => {
+                if(err) throw err;
+                return resolve(resu);
+            })
+        })
+    }catch(err) {
+     console.log(err);
+     return err;   
     }
 }
 

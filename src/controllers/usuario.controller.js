@@ -5,7 +5,7 @@ const {validateData, existUsername, encrypPassword, checkPassword, usersExists} 
 const {createToken} = require('../services/token.services');
 
 exports.test = (req, res) => {
-  return res.send({ message: "Test user controller is running" });
+  return res.status(200).send({ message: "Test user controller is running" });
 };
 
 exports.newUser = async(req, res) => {
@@ -75,9 +75,9 @@ exports.putUser = async(req, res) => {
     const userId = req.params.idUser;
     const userExist = await usersExists();
     const userUserna = await existUsername();
-    const user = userExist.find(user => user.codigoUsuario === req.params.idUser);
+    const user = userExist.find(user => user.codigoUsuario == req.params.idUser);
     const already = userUserna.find(user => user.username === req.body.username);
-    if(user) return res.status(404).send({message: 'User not found'});
+    if(!user) return res.status(404).send({message: 'User not found'});
     if(already) {
       return res.status(404).send({message: 'Username already use'});
     }else{
@@ -105,7 +105,7 @@ exports.putUser = async(req, res) => {
 exports.deleteUser = async(req, res) => {
   try{
     const userId = req.params.idUser;
-   const userExist = await usersExists();
+    const userExist = await usersExists();
     const user = userExist.find(user => console.log(user.codigoUsuario == userId));
    if(!user) {
       return res.status(404).send({message: 'User not found'});
@@ -142,8 +142,7 @@ exports.users = (req, res) => {
   try {
     let getUsers = "SELECT * FROM Usuario";
     db.query(getUsers, (err, result) => {
-      if (err) throw err;
-      if (result.length > 0)
+      if (err) throw err;s
         return res.status(200).send({ message: "Users", result});
     });
   } catch (err) {

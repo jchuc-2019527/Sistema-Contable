@@ -10,6 +10,7 @@ const app = express();
 
 //Routes
 const userRoutes = require('../src/routes/usuario.routes');
+const empresaMaestroRoutes = require('../src/routes/empresaMaestro.routes');
 
 
 //Config client
@@ -21,6 +22,7 @@ app.use(cors());
 
 //Usege routes client
 app.use('/user', userRoutes);
+app.use('/empresaMaestro', empresaMaestroRoutes);
 
 
 //Initial routes
@@ -29,7 +31,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/**', (req, res) => {
-    return res.status(404).send({messgae: 'Endpoint not found'});
+    return res.status(404).send({message: 'Endpoint not found'});
 });
 
 

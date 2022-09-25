@@ -16,7 +16,6 @@ exports.createToken = async(usuario) =>{
             iat: moment().unix(),
             exp: moment().add(5, 'hours').unix()
         }
-        // console.log(payload.roleUser);
         return jwt.encode(payload, key);
     }catch(err) {
         console.log(err);
