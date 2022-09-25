@@ -1,0 +1,650 @@
+{
+	"info": {
+		"_postman_id": "ec2b242a-b0c8-47f0-a2ed-124097471a82",
+		"name": "Sistema contable",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19806241"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "correo",
+									"value": "test@correo.com",
+									"type": "text"
+								},
+								{
+									"key": "claveUsuario",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user/newUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"newUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "claveUsuario",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJub21icmUiOiJ0ZXN0IiwiYXBlbGxpZG8iOiJ0ZXN0IiwidXNlcm5hbWUiOiJ0ZXN0IiwiY29ycmVvIjoiamNodWNAY29ycmVvLmNvbSIsInJvbGVVc2VyIjoiQ0xJRU5UIiwiaWF0IjoxNjY0MTI0Nzk3LCJleHAiOjE2NjQxNDI3OTd9.9odW5x5dKmx56C9qNSDR0mev2gSliDcyq7H4BKWvB3U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "correo",
+									"value": "jchuc@correo.com",
+									"type": "text"
+								},
+								{
+									"key": "claveUsuario",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user/putUser/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"putUser",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJ0ZXN0QGNvcnJlby5jb20iLCJyb2xlVXNlciI6IkNMSUVOVCIsImlhdCI6MTY2NDE0NzUzMywiZXhwIjoxNjY0MTY1NTMzfQ.Cmvc2-FNeP59ZnNzHiwVa43HPh-GHSbGyfpqM7HptoY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/userById/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"userById",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/deleteUser/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"deleteUser",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empresa maestro",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/empresaMaestro/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresaMaestro",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Business",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombreEmpresa",
+									"value": "La torre",
+									"type": "text"
+								},
+								{
+									"key": "nombreComercial",
+									"value": "FPK",
+									"type": "text"
+								},
+								{
+									"key": "direccionEmpresa",
+									"value": "Zona 9",
+									"type": "text"
+								},
+								{
+									"key": "NITEmpresa",
+									"value": "64113728",
+									"type": "text"
+								},
+								{
+									"key": "porcentajeIVA",
+									"value": "0.9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/empresaMaestro/newEmpresaMaestro",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresaMaestro",
+								"newEmpresaMaestro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Business",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombreEmpresa",
+									"value": "Cemaco",
+									"type": "text"
+								},
+								{
+									"key": "nombreComercial",
+									"value": "FPK",
+									"type": "text"
+								},
+								{
+									"key": "direccionEmpresa",
+									"value": "Zona 9",
+									"type": "text"
+								},
+								{
+									"key": "NITEmpresa",
+									"value": "6411372-8",
+									"type": "text"
+								},
+								{
+									"key": "porcentajeIVA",
+									"value": "0.87",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/empresaMaestro/putEmpresaMaestro/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresaMaestro",
+								"putEmpresaMaestro",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bussines",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/empresaMaestro/empresasMaestros",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresaMaestro",
+								"empresasMaestros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Business by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/empresaMaestro/empresaById/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresaMaestro",
+								"empresaById",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Business",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/empresaMaestro/deleteEmpresa/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresaMaestro",
+								"deleteEmpresa",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Entity",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/entidad/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"entidad",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJ0ZXN0QGNvcnJlby5jb20iLCJyb2xlVXNlciI6IkNMSUVOVCIsImlhdCI6MTY2NDE0NzUzMywiZXhwIjoxNjY0MTY1NTMzfQ.Cmvc2-FNeP59ZnNzHiwVa43HPh-GHSbGyfpqM7HptoY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombreEntidad",
+									"value": "Mega Paca",
+									"type": "text"
+								},
+								{
+									"key": "NITEntidad",
+									"value": "6411372-8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/entidad/newEntity",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"entidad",
+								"newEntity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entity",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJ0ZXN0QGNvcnJlby5jb20iLCJyb2xlVXNlciI6IkNMSUVOVCIsImlhdCI6MTY2NDE0NzUzMywiZXhwIjoxNjY0MTY1NTMzfQ.Cmvc2-FNeP59ZnNzHiwVa43HPh-GHSbGyfpqM7HptoY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombreEntidad",
+									"value": "La torre",
+									"type": "text"
+								},
+								{
+									"key": "NITEntidad",
+									"value": "6411372-8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/entidad/putEntity/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"entidad",
+								"putEntity",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entity",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJ0ZXN0QGNvcnJlby5jb20iLCJyb2xlVXNlciI6IkNMSUVOVCIsImlhdCI6MTY2NDE0NzUzMywiZXhwIjoxNjY0MTY1NTMzfQ.Cmvc2-FNeP59ZnNzHiwVa43HPh-GHSbGyfpqM7HptoY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/entidad/deleteEntity/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"entidad",
+								"deleteEntity",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJ0ZXN0QGNvcnJlby5jb20iLCJyb2xlVXNlciI6IkNMSUVOVCIsImlhdCI6MTY2NDE0NzUzMywiZXhwIjoxNjY0MTY1NTMzfQ.Cmvc2-FNeP59ZnNzHiwVa43HPh-GHSbGyfpqM7HptoY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/entidad/entities",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"entidad",
+								"entities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entity by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJ0ZXN0QGNvcnJlby5jb20iLCJyb2xlVXNlciI6IkNMSUVOVCIsImlhdCI6MTY2NDE0NzUzMywiZXhwIjoxNjY0MTY1NTMzfQ.Cmvc2-FNeP59ZnNzHiwVa43HPh-GHSbGyfpqM7HptoY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/entidad/entityById/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"entidad",
+								"entityById",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
