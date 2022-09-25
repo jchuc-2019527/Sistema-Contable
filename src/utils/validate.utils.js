@@ -11,7 +11,7 @@ exports.validateData = (data) => {
     return msg.trim();
 }
 
-exports.userExist = () => {
+exports.existUsername = () => {
     try{
         const exist = 'SELECT U.username FROM Usuario U';
         return new Promise((resolve, reject) => {
@@ -26,7 +26,7 @@ exports.userExist = () => {
     }
 }
 
-exports.passwordExists= () => {
+exports.usersExists= () => {
     try{
         const exist = 'SELECT * FROM Usuario';
         return new Promise((resolve, reject) => {
