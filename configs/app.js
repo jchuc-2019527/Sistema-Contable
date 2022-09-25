@@ -11,6 +11,7 @@ const app = express();
 //Routes
 const userRoutes = require('../src/routes/usuario.routes');
 const empresaMaestroRoutes = require('../src/routes/empresaMaestro.routes');
+const entidadRoutes = require('../src/routes/entidad.routes');
 
 
 //Config client
@@ -23,6 +24,7 @@ app.use(cors());
 //Usege routes client
 app.use('/user', userRoutes);
 app.use('/empresaMaestro', empresaMaestroRoutes);
+app.use('/entidad', entidadRoutes);
 
 
 //Initial routes

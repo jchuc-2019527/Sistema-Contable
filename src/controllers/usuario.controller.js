@@ -106,7 +106,7 @@ exports.deleteUser = async(req, res) => {
   try{
     const userId = req.params.idUser;
     const userExist = await usersExists();
-    const user = userExist.find(user => console.log(user.codigoUsuario == userId));
+    const user = userExist.find(user => user.codigoUsuario == userId);
    if(!user) {
       return res.status(404).send({message: 'User not found'});
    }else{
@@ -138,11 +138,11 @@ exports.userById = async(req, res) => {
   }
 }
 
-exports.users = (req, res) => {
+exports.users = async(req, res) => {
   try {
     let getUsers = "SELECT * FROM Usuario";
-    db.query(getUsers, (err, result) => {
-      if (err) throw err;s
+    await db.query(getUsers, (err, result) => {
+      if (err) throw err;
         return res.status(200).send({ message: "Users", result});
     });
   } catch (err) {

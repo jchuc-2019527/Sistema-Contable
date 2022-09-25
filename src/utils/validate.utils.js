@@ -90,3 +90,33 @@ exports.checkPassword = async(password, hashSync) => {
         return err;
     }
 }
+
+exports.existEntity = () => {
+    try{
+        const exist = 'SELECT E.nombreEntidad FROM Entidad E';
+        return new Promise((resolve, reject) => {
+            db.query(exist,(err, result) => {
+                if(err) throw err;
+                return resolve(result);
+            })
+        })
+    }catch(err) {
+        console.log(err);
+        return err;
+    }
+}
+
+exports.entities = () => {
+    try{
+        const exist = 'SELECT * FROM Entidad';
+        return new Promise((resolve, reject) =>{
+            db.query(exist, (err, result) => {
+                if(err) throw err;
+                return resolve(result);
+            })
+        })
+    }catch(err) {
+        console.log(err);
+        return err;
+    }
+}
