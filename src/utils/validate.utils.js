@@ -11,11 +11,26 @@ exports.validateData = (data) => {
     return msg.trim();
 }
 
-exports.userExist = (username) => {
+exports.userExist = () => {
     try{
         const exist = 'SELECT U.username FROM Usuario U';
         return new Promise((resolve, reject) => {
-            db.query(exist, username, (err, resu) => {  
+            db.query(exist, (err, resu) => {  
+                if(err) throw err;
+                return resolve(resu)
+            })
+        })
+    }catch(err) {
+        console.log(err);
+        return err 
+    }
+}
+
+exports.passwordExists= () => {
+    try{
+        const exist = 'SELECT * FROM Usuario';
+        return new Promise((resolve, reject) => {
+            db.query(exist,(err, resu) => {  
                 if(err) throw err;
                 return resolve(resu)
             })

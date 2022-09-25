@@ -1,7 +1,7 @@
 "use strict";
 
 const db = require("../../configs/pooldb");
-const {validateData, userExist, encrypPassword, checkPassword} = require('../utils/validate.utils');
+const {validateData, userExist, encrypPassword, checkPassword, passwordExists} = require('../utils/validate.utils');
 const {createToken} = require('../services/token.services');
 
 exports.test = (req, res) => {
@@ -21,7 +21,7 @@ exports.newUser = async(req, res) => {
         };
         let msg = validateData(data);
         if(!msg) {
-          const usernameExist = await userExist(req.body.username)
+          const usernameExist = await userExist()
           const user = usernameExist.find(username => username.username === data.username)
           if(!user) {
             data.claveUsuario = await encrypPassword(req.body.claveUsuario);
@@ -52,14 +52,18 @@ exports.login = async(req, res) => {
     };
     let msg = validateData(data);
     if(!msg) {
-      let search = await userExist(req.body.username);
-      const userLogin = search.find(username => username.username === data.username)
-      console.log(userLogin)
-      if(userLogin && await checkPassword(body.claveUsuario, search.claveUsuario)) {
-       const token = await createToken(search);
-       return res.status(200).send({message: 'Log in successfuly', userLogin, token})
+      const users = await passwordExists();
+      const existUser = users.find(user => user.username === data.username);
+      const username = await userExist()
+      const us = username.find(user => user.username === data.username);
+      // console.log(us);
+      if(us && await checkPassword(data.claveUsuario, existUser.claveUsuario)) {
+        // return res.status(404).send({message: 'User not found'})
+        // console.log('no existe el username')
+        const token = await createToken(existUser);
+        return res.status(202).send({token,message: 'Login success', existUser});
       }else{
-        return res.status(400).send({message: 'Username or password incorrect'})
+        return res.status(403).send({message: 'Username or password incorrect'})
       }
     }else{
       return res.status(402).send(msg)
