@@ -1,13 +1,12 @@
 {
 	"info": {
-		"_postman_id": "ec2b242a-b0c8-47f0-a2ed-124097471a82",
+		"_postman_id": "299e3cab-fa98-455d-934a-c29c27a61c37",
 		"name": "Sistema contable",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "19806241"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "User",
+			"name": "Usuario",
 			"item": [
 				{
 					"name": "test",
@@ -93,7 +92,7 @@
 							"urlencoded": [
 								{
 									"key": "username",
-									"value": "test",
+									"value": "nineth",
 									"type": "text"
 								},
 								{
@@ -180,7 +179,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJ0ZXN0QGNvcnJlby5jb20iLCJyb2xlVXNlciI6IkNMSUVOVCIsImlhdCI6MTY2NDE0NzUzMywiZXhwIjoxNjY0MTY1NTMzfQ.Cmvc2-FNeP59ZnNzHiwVa43HPh-GHSbGyfpqM7HptoY",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyMTAzNjAsImV4cCI6MTY2NDIyODM2MH0.KQOJtVSv-XuWeH-f9kWf5pI5azJJr2okSQP3E6I3plo",
 								"type": "text"
 							}
 						],
@@ -465,7 +464,7 @@
 			]
 		},
 		{
-			"name": "Entity",
+			"name": "Entidad",
 			"item": [
 				{
 					"name": "Test",
@@ -568,32 +567,6 @@
 					"response": []
 				},
 				{
-					"name": "Entity",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJ0ZXN0QGNvcnJlby5jb20iLCJyb2xlVXNlciI6IkNMSUVOVCIsImlhdCI6MTY2NDE0NzUzMywiZXhwIjoxNjY0MTY1NTMzfQ.Cmvc2-FNeP59ZnNzHiwVa43HPh-GHSbGyfpqM7HptoY",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/entidad/deleteEntity/3",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"entidad",
-								"deleteEntity",
-								"3"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Entities",
 					"request": {
 						"method": "GET",
@@ -639,6 +612,460 @@
 								"entidad",
 								"entityById",
 								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entity",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJ0ZXN0QGNvcnJlby5jb20iLCJyb2xlVXNlciI6IkNMSUVOVCIsImlhdCI6MTY2NDE0NzUzMywiZXhwIjoxNjY0MTY1NTMzfQ.Cmvc2-FNeP59ZnNzHiwVa43HPh-GHSbGyfpqM7HptoY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/entidad/deleteEntity/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"entidad",
+								"deleteEntity",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Impuesto Adicional",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/impuesto/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"impuesto",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Taxes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyMTAzNjAsImV4cCI6MTY2NDIyODM2MH0.KQOJtVSv-XuWeH-f9kWf5pI5azJJr2okSQP3E6I3plo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombreImpuesto",
+									"value": "Renta",
+									"type": "default"
+								},
+								{
+									"key": "descripcionImpuesto",
+									"value": "Impuesto sobre la renta",
+									"type": "default"
+								},
+								{
+									"key": "valorImpuesto",
+									"value": "2.10",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/impuesto/newImpuesto",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"impuesto",
+								"newImpuesto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Taxe",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyMTEzMzMsImV4cCI6MTY2NDIyOTMzM30.W1TZEA8oiRSPJ4yj40caJVWyyd_j0U0W-4G58k85qJ0",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombreImpuesto",
+									"value": "RENTA",
+									"type": "default"
+								},
+								{
+									"key": "descripcionImpuesto",
+									"value": "Impuesto sobre la renta",
+									"type": "default"
+								},
+								{
+									"key": "valorImpuesto",
+									"value": "100",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/impuesto/putImpuesto/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"impuesto",
+								"putImpuesto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Taxes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyMTEzMzMsImV4cCI6MTY2NDIyOTMzM30.W1TZEA8oiRSPJ4yj40caJVWyyd_j0U0W-4G58k85qJ0",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/impuesto/taxes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"impuesto",
+								"taxes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Taxe by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyMTEzMzMsImV4cCI6MTY2NDIyOTMzM30.W1TZEA8oiRSPJ4yj40caJVWyyd_j0U0W-4G58k85qJ0",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/impuesto/taxeById/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"impuesto",
+								"taxeById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Taxe",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyMTEzMzMsImV4cCI6MTY2NDIyOTMzM30.W1TZEA8oiRSPJ4yj40caJVWyyd_j0U0W-4G58k85qJ0",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/impuesto/deleteTaxe/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"impuesto",
+								"deleteTaxe",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tipo Mov. L.compras ventas",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/tipoMovimiento/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tipoMovimiento",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Type movement",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyMTEzMzMsImV4cCI6MTY2NDIyOTMzM30.W1TZEA8oiRSPJ4yj40caJVWyyd_j0U0W-4G58k85qJ0",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombreMovimiento",
+									"value": "Gasolina",
+									"type": "default"
+								},
+								{
+									"key": "tipoLibro",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "tipoMovimiento",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/tipoMovimiento/newTipoMov",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tipoMovimiento",
+								"newTipoMov"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Type movement",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyMTEzMzMsImV4cCI6MTY2NDIyOTMzM30.W1TZEA8oiRSPJ4yj40caJVWyyd_j0U0W-4G58k85qJ0",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombreMovimiento",
+									"value": "Administracion",
+									"type": "default"
+								},
+								{
+									"key": "tipoLibro",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "tipoMovimiento",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/tipoMovimiento/putMovimiento/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tipoMovimiento",
+								"putMovimiento",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Type movements",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyMTEzMzMsImV4cCI6MTY2NDIyOTMzM30.W1TZEA8oiRSPJ4yj40caJVWyyd_j0U0W-4G58k85qJ0",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/tipoMovimiento/movements",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tipoMovimiento",
+								"movements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Type movement by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyMTEzMzMsImV4cCI6MTY2NDIyOTMzM30.W1TZEA8oiRSPJ4yj40caJVWyyd_j0U0W-4G58k85qJ0",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/tipoMovimiento/movementById/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tipoMovimiento",
+								"movementById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Type movement",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyMTEzMzMsImV4cCI6MTY2NDIyOTMzM30.W1TZEA8oiRSPJ4yj40caJVWyyd_j0U0W-4G58k85qJ0",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/tipoMovimiento/deleteMov/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tipoMovimiento",
+								"deleteMov",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuenta contable",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/cuenta/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cuenta",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Leadge account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/cuenta/newCunetaContable/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cuenta",
+								"newCunetaContable",
+								""
 							]
 						}
 					},

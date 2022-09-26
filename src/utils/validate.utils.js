@@ -180,3 +180,17 @@ exports.movimientos = () => {
         return err;
     }
 }
+exports.nombreCuenta = () => {
+    try{
+        let exist = 'SELECT C.nombreCuentaContable FROM CuentaContable C';
+        return new Promise((resolve, reject) => {
+            db.query(exist, (err, resu) => {
+                if(err) throw err;
+                return resolve(resu)
+            })
+        })
+    }catch(err) {
+        console.log(err);
+        return err;
+    }
+}
