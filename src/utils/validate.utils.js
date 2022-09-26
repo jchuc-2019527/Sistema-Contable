@@ -150,3 +150,33 @@ exports.nameImpuesto = () => {
         return err;
     }
 }
+
+exports.nameMovimiento = () => {
+    try{
+        const exist = 'SELECT T.nombreMovimiento FROM TipoMovimientoLibroComprasVentas T';
+        return new Promise((resolve, reject) => {
+            db.query(exist, (err, result) => {
+                if(err) throw err;
+                return resolve(result)
+            })
+        })
+    }catch(err) {
+        console.log(err);
+        return res.status(500).send({Message: 'Error en el servidor newMovimiento'});
+    }
+}
+
+exports.movimientos = () => {
+    try{
+        const exist = 'SELECT * FROM TipoMovimientoLibroComprasVentas';
+        return new Promise((resolve, reject) => {
+            db.query(exist, (err, resul) => {
+                if(err) throw err;
+                return resolve(resul);
+            })
+        })
+    }catch(err) {
+        console.log(err);
+        return err;
+    }
+}

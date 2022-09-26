@@ -13,6 +13,7 @@ const userRoutes = require('../src/routes/usuario.routes');
 const empresaMaestroRoutes = require('../src/routes/empresaMaestro.routes');
 const entidadRoutes = require('../src/routes/entidad.routes');
 const impuestoAdicionalRoutes = require('../src/routes/impuestoAdicional.routes');
+const tipoMovimientoLibroComprasVentasRoutes = require('../src/routes/tipoMovimientoLibroComprasVenats.routes');
 
 
 //Config client
@@ -27,6 +28,7 @@ app.use('/user', userRoutes);
 app.use('/empresaMaestro', empresaMaestroRoutes);
 app.use('/entidad', entidadRoutes);
 app.use('/impuesto', impuestoAdicionalRoutes);
+app.use('/tipoMovimiento', tipoMovimientoLibroComprasVentasRoutes);
 
 
 //Initial routes
