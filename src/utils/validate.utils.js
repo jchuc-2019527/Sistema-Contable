@@ -120,3 +120,33 @@ exports.entities = () => {
         return err;
     }
 }
+
+exports.impuestos =() => {
+    try{
+        const exist = 'SELECT * FROM ImpuestoAdicional';
+        return new Promise((resolve, reject) => {
+            db.query(exist, (err, resul) => {
+                if(err) throw err;
+                return resolve(resul);
+            })
+        })
+    }catch(err) {
+        console.log(err)
+        return err;
+    }
+}
+
+exports.nameImpuesto = () => {
+    try{
+        const exist = 'SELECT I.nombreImpuesto FROM ImpuestoAdicional I'
+        return new Promise((resolve, reject) =>{
+            db.query(exist, (err, resul) => {
+                if(err) throw err;
+                return resolve(resul);
+            })
+        })
+    }catch(err) {
+        console.log(err);
+        return err;
+    }
+}
