@@ -123,7 +123,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJub21icmUiOiJ0ZXN0IiwiYXBlbGxpZG8iOiJ0ZXN0IiwidXNlcm5hbWUiOiJ0ZXN0IiwiY29ycmVvIjoiamNodWNAY29ycmVvLmNvbSIsInJvbGVVc2VyIjoiQ0xJRU5UIiwiaWF0IjoxNjY0MTI0Nzk3LCJleHAiOjE2NjQxNDI3OTd9.9odW5x5dKmx56C9qNSDR0mev2gSliDcyq7H4BKWvB3U",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyODkwODcsImV4cCI6MTY2NDMwNzA4N30.411XflWN-RQZAljJyrGwCNMS7u0v2Z7hYYBy2tD9X50",
 								"type": "text"
 							}
 						],
@@ -179,7 +179,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyMTAzNjAsImV4cCI6MTY2NDIyODM2MH0.KQOJtVSv-XuWeH-f9kWf5pI5azJJr2okSQP3E6I3plo",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQzMTI3MjYsImV4cCI6MTY2NDMzMDcyNn0.B0NqtEY6PnGbPeyjDzMr0mRf4qTPsr1RD2gkUqOu06s",
 								"type": "text"
 							}
 						],
@@ -280,7 +280,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyODkwODcsImV4cCI6MTY2NDMwNzA4N30.411XflWN-RQZAljJyrGwCNMS7u0v2Z7hYYBy2tD9X50",
 								"type": "text"
 							}
 						],
@@ -289,7 +289,7 @@
 							"urlencoded": [
 								{
 									"key": "nombreEmpresa",
-									"value": "La torre",
+									"value": "Turbo Cash",
 									"type": "text"
 								},
 								{
@@ -391,7 +391,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyODkwODcsImV4cCI6MTY2NDMwNzA4N30.411XflWN-RQZAljJyrGwCNMS7u0v2Z7hYYBy2tD9X50",
 								"type": "text"
 							}
 						],
@@ -1056,16 +1056,76 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "codigoCuentaContable",
+									"value": "1-1-03",
+									"type": "default"
+								},
+								{
+									"key": "nombreCuentaContable",
+									"value": "Caja chicasa",
+									"type": "default"
+								},
+								{
+									"key": "tipoCuentaContable",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "padreCuentaContable",
+									"value": "1-1",
+									"type": "default"
+								},
+								{
+									"key": "nivelCuentaContable",
+									"value": "3",
+									"type": "default"
+								},
+								{
+									"key": "recibePartidasCuentaContable",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
 						"url": {
-							"raw": "localhost:3000/cuenta/newCunetaContable/",
+							"raw": "localhost:3000/cuenta/newCuentaContable/3",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"cuenta",
-								"newCunetaContable",
-								""
+								"newCuentaContable",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Leadges accounts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQzMTI3MjYsImV4cCI6MTY2NDMzMDcyNn0.B0NqtEY6PnGbPeyjDzMr0mRf4qTPsr1RD2gkUqOu06s",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/cuenta/cuentasContables",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cuenta",
+								"cuentasContables"
 							]
 						}
 					},
