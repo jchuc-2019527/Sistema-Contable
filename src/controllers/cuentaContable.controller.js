@@ -1,7 +1,8 @@
 'use strict'
 
 const db = require('../../configs/pooldb');
-const { validateData, empresasMaestros, nombreCuenta } = require('../utils/validate.utils');
+const { validateData, empresasMaestros, nombreCuenta, cuentasContables} = require('../utils/validate.utils');
+
 
 exports.test = (req, res) => {
     return res.status(200).send({Message: 'Test cuentaContable controller is runnig'});
@@ -12,12 +13,12 @@ exports.newCuentaContable = async(req, res) => {
        const body = req.body;
        const data = {
         codigoCuentaContable: body.codigoCuentaContable,
-        codigoEmpresa: body.codigoEmpresa,
         nombreCuentaContable: body.nombreCuentaContable,
         tipoCuentaContable: body.tipoCuentaContable,
         padreCuentaContable: body.padreCuentaContable,
         nivelCuentaContable: body.nivelCuentaContable,
-        recibePartidasCuentaContable: body.recibePartidaCuentaContable
+        recibePartidasCuentaContable: body.recibePartidasCuentaContable,
+        codigoEmpresa: req.params.idEmpre
        };
        let msg = validateData(data);
        if(!msg) {
@@ -27,11 +28,15 @@ exports.newCuentaContable = async(req, res) => {
         const newNombe = nombreCu.find(name => name.nombreCuentaContable === req.body.nombreCuentaContable);
         const empresa = empresaExi.find(empre => empre.codigoEmpresa == empreId);
         if(!empresa) return res.status(404).send({Message: 'Business not exist'});
-        if(!newNombe) {
+        if(!newNombe && !empresa) {
+            let inner = `select EmpresaMaestro.nombreEmpresa  FROM EmpresaMaestro INNER JOIN CuentaContable ON EmpresaMaestro.codigoEmpresa = CuentaContable.codigoCuentaC WHERE EmpresaMaestro.codigoEmpresa = ${empreId}`;
             let newCuenta = 'INSERT INTO CuentaContable SET ?';
-            await db.query(newCuenta, data, (err, resu) => {
+            await db.query(newCuenta,data, (err, resu) => {
                 if(err) throw err;
-                return res.status(201).send({Message: 'Leadge created', data});
+                 db.query(inner, (err, resu) => {
+                    if(err) throw err;
+                    return res.status(201).send({Message: 'Cuenta contable creada', resu, data})
+                })
             })
         }else {
             return res.status(409).send({Message: 'Ledger account already exist'});
@@ -42,5 +47,21 @@ exports.newCuentaContable = async(req, res) => {
     }catch(err) {
         console.log(err);
         return res.status(500).send({Message: 'Error en el servidor newCuentaContable'});
+    }
+}
+
+exports.cuentasContables = async(req, res) => {
+    try{
+        let cuenta = 'SELECT * FROM CuentaContable';
+        let cuentas = await cuentasContables();
+       let permission = cuentas.find(cuenta => cuenta.codigoEmpresa == req.user.sub);
+      console.log(req.user.sub)
+        // await db.query(cuenta, (err, result) => {
+        //     if(err) throw err;
+        //     return res.status(200).send({Message: 'Leadges accounts', permission});
+        // })
+    }catch(err) {
+        console.log(err);
+        return res.status(500).send({Message: 'Error en el servidor cuentasContables'});
     }
 }

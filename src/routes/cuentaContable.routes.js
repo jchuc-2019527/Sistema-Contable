@@ -7,6 +7,7 @@ const auth = require('../services/authenticated.services');
 const api = express();
 
 api.get('/test', cuentaContable.test);
-api.post('/newCuentaContable', [auth.ensureAuth], cuentaContable.newCuentaContable);
+api.post('/newCuentaContable/:idEmpre', cuentaContable.newCuentaContable);
+api.get('/cuentasContables',[auth.ensureAuth], cuentaContable.cuentasContables);
 
 module.exports = api;

@@ -194,3 +194,18 @@ exports.nombreCuenta = () => {
         return err;
     }
 }
+
+exports.cuentasContables = () => {
+    try{
+        let exist = 'SELECT * FROM CuentaContable';
+        return new Promise((resolve, reject) => {
+            db.query(exist, (err, resu) => {
+                if(err) throw err;
+                return resolve(resu)
+            })
+        })
+    }catch(err) {
+        console.log(err);
+        return err;
+    }
+}
