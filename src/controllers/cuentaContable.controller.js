@@ -55,11 +55,11 @@ exports.cuentasContables = async(req, res) => {
         let cuenta = 'SELECT * FROM CuentaContable';
         let cuentas = await cuentasContables();
        let permission = cuentas.find(cuenta => cuenta.codigoEmpresa == req.user.sub);
-      console.log(req.user.sub)
-        // await db.query(cuenta, (err, result) => {
-        //     if(err) throw err;
-        //     return res.status(200).send({Message: 'Leadges accounts', permission});
-        // })
+      console.log('soy el sub',req.user.sub)
+        await db.query(cuenta, (err, result) => {
+            if(err) throw err;
+            return res.status(200).send({Message: 'Leadges accounts', permission});
+        })
     }catch(err) {
         console.log(err);
         return res.status(500).send({Message: 'Error en el servidor cuentasContables'});
