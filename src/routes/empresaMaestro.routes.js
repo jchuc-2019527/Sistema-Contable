@@ -9,7 +9,7 @@ const api =express();
 api.get('/test', empresaMaestro.test);
 api.post('/newEmpresaMaestro', [auth.ensureAuth],empresaMaestro.newEmpresaMaestro);
 api.put('/putEmpresaMaestro/:idEmpresa',[auth.ensureAuth, auth.isAdmin],empresaMaestro.putEmpresaMaestro);
-api.get('/empresasMaestros', [auth.ensureAuth],empresaMaestro.empresasMaestros);
+api.get('/empresasMaestros', empresaMaestro.empresasMaestros);
 api.get('/empresaById/:idEmpresa', [auth.ensureAuth],empresaMaestro.empresaById);
 api.delete('/deleteEmpresa/:idEmpresa', [auth.ensureAuth,],empresaMaestro.deleteEmpresa);
 

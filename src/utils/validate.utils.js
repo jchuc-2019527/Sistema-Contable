@@ -182,7 +182,7 @@ exports.movimientos = () => {
 }
 exports.nombreCuenta = () => {
     try{
-        let exist = 'SELECT C.nombreCuentaContable FROM CuentaContable C';
+        let exist = 'SELECT C.nombreCuenta FROM CuentaContable C';
         return new Promise((resolve, reject) => {
             db.query(exist, (err, resu) => {
                 if(err) throw err;

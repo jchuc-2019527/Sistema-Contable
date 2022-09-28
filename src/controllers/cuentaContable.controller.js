@@ -12,12 +12,12 @@ exports.newCuentaContable = async(req, res) => {
     try{
        const body = req.body;
        const data = {
-        codigoCuentaContable: body.codigoCuentaContable,
-        nombreCuentaContable: body.nombreCuentaContable,
-        tipoCuentaContable: body.tipoCuentaContable,
-        padreCuentaContable: body.padreCuentaContable,
-        nivelCuentaContable: body.nivelCuentaContable,
-        recibePartidasCuentaContable: body.recibePartidasCuentaContable,
+        cuenta: body.cuenta,
+        nombreCuenta: body.nombreCuenta,
+        concentra: body.concentra,
+        resultado: body.resultado,
+        nivel: body.nivel,
+        detalle: body.detalle,
         codigoEmpresa: req.params.idEmpre
        };
        let msg = validateData(data);
@@ -25,10 +25,12 @@ exports.newCuentaContable = async(req, res) => {
         const empreId = req.params.idEmpre;
         const empresaExi = await empresasMaestros();
         const nombreCu = await nombreCuenta();
-        const newNombe = nombreCu.find(name => name.nombreCuentaContable === req.body.nombreCuentaContable);
+        const cuentaContable = await cuentasContables();
+        const newNombre = nombreCu.find(name => name.nombreCuenta === req.body.nombreCuenta);
+        const empreCuenta = cuentaContable.find(id => id.codigoEmpresa == req.params.idEmpre);
         const empresa = empresaExi.find(empre => empre.codigoEmpresa == empreId);
         if(!empresa) return res.status(404).send({Message: 'Business not exist'});
-        if(!newNombe && !empresa) {
+        if(!empreCuenta && newNombre) {
             let inner = `select EmpresaMaestro.nombreEmpresa  FROM EmpresaMaestro INNER JOIN CuentaContable ON EmpresaMaestro.codigoEmpresa = CuentaContable.codigoCuentaC WHERE EmpresaMaestro.codigoEmpresa = ${empreId}`;
             let newCuenta = 'INSERT INTO CuentaContable SET ?';
             await db.query(newCuenta,data, (err, resu) => {

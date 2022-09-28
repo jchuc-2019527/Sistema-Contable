@@ -1,7 +1,7 @@
 "use strict";
 
 const db = require("../../configs/pooldb");
-const {validateData, existUsername, encrypPassword, checkPassword, usersExists} = require('../utils/validate.utils');
+const {validateData, existUsername, encrypPassword, checkPassword, usersExists, empresasMaestros} = require('../utils/validate.utils');
 const {createToken} = require('../services/token.services');
 
 exports.test = (req, res) => {
@@ -17,18 +17,27 @@ exports.newUser = async(req, res) => {
             username: body.username,
             correo: body.correo,
             claveUsuario: body.claveUsuario,
+            codigoEmpresa: req.params.idEmpre,
             roleUser: 'CLIENT'
         };
         let msg = validateData(data);
         if(!msg) {
-          const usernameExist = await existUsername()
+          const id = req.params.idEmpre
+          const usernameExist = await existUsername();
+          const empreId = await empresasMaestros();
           const user = usernameExist.find(username => username.username === data.username)
           if(!user) {
+            const idEmpreExi = empreId.find(id => id.codigoEmpresa == req.params.idEmpre);
+            if(!idEmpreExi) return res.status(404).send({Message: 'Business not found'})
             data.claveUsuario = await encrypPassword(req.body.claveUsuario);
             let userNew = 'INSERT INTO Usuario SET ?';
              await db.query(userNew, data,(error, result) => {
               if(error) throw error;
-              return res.status(201).send({message: 'User created', data})
+              let inner = ` select EmpresaMaestro.nombreEmpresa  FROM EmpresaMaestro INNER JOIN Usuario ON EmpresaMaestro.codigoEmpresa = usuario.codigoUsuario WHERE EmpresaMaestro.codigoEmpresa = ${id}`;
+              db.query(inner, (err, resul) => {
+                if(err) throw err;
+                return res.status(201).send({Message: 'User created', resul, data});
+              })
             })
           }else{
             return res.status(409).send({message: 'User already use'})
@@ -150,3 +159,17 @@ exports.users = async(req, res) => {
     return res.status(500).send({ message: "Error en el servidor (getUsers)" });
   }
 };
+
+exports.usersByCompany = async(req, res) => {
+  try{
+    let idEmpre = req.params.idEmpre;
+    let usersCompany = `SELECT * from Usuario WHERE codigoEmpresa = ${idEmpre}`;
+    await db.query(usersCompany, (err, resu) => {
+      if(err) throw err;
+      return res.status(200).send({Message: 'Users founds', resu});
+    })
+  }catch(err) {
+    console.log(err);
+    return res.status(500).send({Message: 'Error en el servidor usersByCompany'});
+  }
+}

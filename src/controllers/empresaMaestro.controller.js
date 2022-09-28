@@ -66,7 +66,7 @@ exports.putEmpresaMaestro = async(req, res) => {
         }
     }catch(err) {
         console.log(err);
-        return res.status(500).send({message: 'Error en el servidor putEmpresaMaestro'});
+        return res.status(500).send({Message: 'Error en el servidor putEmpresaMaestro'});
     }
 }
 
