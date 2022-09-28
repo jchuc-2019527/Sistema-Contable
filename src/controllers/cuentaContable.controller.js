@@ -1,7 +1,7 @@
 'use strict'
 
 const db = require('../../configs/pooldb');
-const { validateData, empresasMaestros, nombreCuenta, cuentasContables} = require('../utils/validate.utils');
+const { validateData, empresasMaestros, nombreCuenta, cuentasContables, usersExists} = require('../utils/validate.utils');
 
 
 exports.test = (req, res) => {
@@ -65,5 +65,69 @@ exports.cuentasContables = async(req, res) => {
     }catch(err) {
         console.log(err);
         return res.status(500).send({Message: 'Error en el servidor cuentasContables'});
+    }
+}
+
+exports.putCuentaContable = async(req, res) => {
+    try{
+       const cuentaId = req.params.idCuenta;
+       const cuentasExist = await cuentasContables();
+       const cuenta = cuentasExist.find(cuenta => cuenta.codigoCuentaC == req.params.idCuenta);
+       const already = cuentasExist.find(cuenta => cuenta.nombreCuenta === req.body.nombreCuenta);
+       if(!cuenta) return res.status(404).send({Message: 'Leadge not found'});
+       if(already) {
+        res.status(409).send({Message: 'Leadge already exist'});
+       }else{
+        const body = req.body;
+        const data = {
+            cuenta: body.cuenta,
+            nombreCuenta: body.nombreCuenta,
+            concentra: body.concentra,
+            resultado: body.resultado,
+            nivel: body.nivel,
+            detalle: body.detalle
+        };
+        let updateCuenta = `UPDATE CuentaContable SET cuenta = '${data.cuenta}', nombreCuenta = '${data.nombreCuenta}', concentra = '${data.concentra}', resultado = '${data.resultado}', nivel = '${data.nivel}', detalle = '${data.detalle}' WHERE codigoEmpresa = ${cuentaId}`;
+        await db.query(updateCuenta, data, (err, result) => {
+            if(err) throw err;
+            return res.status(200).send({Message: 'Leadge updated', data});
+        })
+       }
+    }catch(err) {
+        console.log(err)
+        return res.status(500).send({Message: 'Error en el servidor putCuentaContable'})
+    }
+}
+
+exports.cuentaById = async(req, res) => {
+    try{
+        const cuentaId = req.params.idCuenta;
+        const cuentaExist = await cuentasContables();
+        const cuenta = cuentaExist.find(cuenta => cuenta.codigoCuentaC == cuentaId);
+        if(!cuenta) return res.status(404).send({Message: 'Leadge not found'});
+        return res.status(200).send({Message: 'Leadge found', cuenta})
+    }catch(err) {
+        console.log(err)
+        return res.status(500).send({Message: 'Error en el servidor cuentaById'});
+    }
+}
+
+exports.deleteCuenta = async(req, res) => {
+    try{
+        const cuentaId = req.params.idCuenta;
+        const cuentaExi = await cuentasContables();
+        const cuenta = cuentaExi.find(cuenta => cuenta.codigoCuentaC == cuentaId);
+        if(!cuenta) {
+            return res.status(404).send({Message: 'Leadge not found'});
+        }else{
+            let deleteCuenta = `DELETE FROM CuentaContable WHERE codigoCuentaC = ${cuentaId}`;
+            await db.query(deleteCuenta, (err, resul) => {
+                if(err) throw err;
+                return res.status(500).send({Message: 'Leadge deleted', cuenta})
+            })
+        }
+    }catch(err) {
+        console.log(err)
+        return res.status(500).send({Message: 'Error en el servidor deleteCuenta'});
     }
 }
