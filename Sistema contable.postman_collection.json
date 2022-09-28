@@ -6,252 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Usuario",
-			"item": [
-				{
-					"name": "test",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/user/test",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"test"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "user",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "nombre",
-									"value": "test",
-									"type": "text"
-								},
-								{
-									"key": "apellido",
-									"value": "test",
-									"type": "text"
-								},
-								{
-									"key": "username",
-									"value": "test",
-									"type": "text"
-								},
-								{
-									"key": "correo",
-									"value": "test@correo.com",
-									"type": "text"
-								},
-								{
-									"key": "claveUsuario",
-									"value": "123",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/user/newUser",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"newUser"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "nineth",
-									"type": "text"
-								},
-								{
-									"key": "claveUsuario",
-									"value": "123",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/user/login",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "User",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyODkwODcsImV4cCI6MTY2NDMwNzA4N30.411XflWN-RQZAljJyrGwCNMS7u0v2Z7hYYBy2tD9X50",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "nombre",
-									"value": "test",
-									"type": "text"
-								},
-								{
-									"key": "apellido",
-									"value": "test",
-									"type": "text"
-								},
-								{
-									"key": "username",
-									"value": "test",
-									"type": "text"
-								},
-								{
-									"key": "correo",
-									"value": "jchuc@correo.com",
-									"type": "text"
-								},
-								{
-									"key": "claveUsuario",
-									"value": "123",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/user/putUser/1",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"putUser",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "users",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQzMTI3MjYsImV4cCI6MTY2NDMzMDcyNn0.B0NqtEY6PnGbPeyjDzMr0mRf4qTPsr1RD2gkUqOu06s",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/user/users",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "User by id",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/user/userById/2",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"userById",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "user",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:3000/user/deleteUser/1",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"deleteUser",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "Empresa maestro",
 			"item": [
 				{
@@ -280,7 +34,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQyODkwODcsImV4cCI6MTY2NDMwNzA4N30.411XflWN-RQZAljJyrGwCNMS7u0v2Z7hYYBy2tD9X50",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6Im5pbmV0aCIsImNvcnJlbyI6InRlc3RAY29ycmVvLmNvbSIsInJvbGVVc2VyIjoiQ0xJRU5UIiwiaWF0IjoxNjY0Mzg0ODM3LCJleHAiOjE2NjQ0MDI4Mzd9.wzSqTIWWRHwQP6YN_hEWwUtwAXelvGjxJT2V7yNKF8I",
 								"type": "text"
 							}
 						],
@@ -289,7 +43,7 @@
 							"urlencoded": [
 								{
 									"key": "nombreEmpresa",
-									"value": "Turbo Cash",
+									"value": "Ikea",
 									"type": "text"
 								},
 								{
@@ -456,6 +210,273 @@
 								"empresaMaestro",
 								"deleteEmpresa",
 								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "Juan",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "Lopez",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "jchuc",
+									"type": "text"
+								},
+								{
+									"key": "correo",
+									"value": "test@correo.com",
+									"type": "text"
+								},
+								{
+									"key": "claveUsuario",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user/newUser/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"newUser",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "jchuc",
+									"type": "text"
+								},
+								{
+									"key": "claveUsuario",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6Im5pbmV0aCIsImNvcnJlbyI6InRlc3RAY29ycmVvLmNvbSIsInJvbGVVc2VyIjoiQ0xJRU5UIiwiaWF0IjoxNjY0Mzg0ODM3LCJleHAiOjE2NjQ0MDI4Mzd9.wzSqTIWWRHwQP6YN_hEWwUtwAXelvGjxJT2V7yNKF8I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "prueba put",
+									"type": "text"
+								},
+								{
+									"key": "correo",
+									"value": "jchuc@correo.com",
+									"type": "text"
+								},
+								{
+									"key": "claveUsuario",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user/putUser/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"putUser",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQzMTI3MjYsImV4cCI6MTY2NDMzMDcyNn0.B0NqtEY6PnGbPeyjDzMr0mRf4qTPsr1RD2gkUqOu06s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/userById/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"userById",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJqY2h1Y0Bjb3JyZW8uY29tIiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQxMjg3NTUsImV4cCI6MTY2NDE0Njc1NX0.m5-jF7VMJG1zdWX80BZt2g2rJze0sc7FH_qHfjaqL0M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/deleteUser/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"deleteUser",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UsersByCompany",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/usersByCompany/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"usersByCompany",
+								"2"
 							]
 						}
 					},
@@ -1030,7 +1051,7 @@
 			]
 		},
 		{
-			"name": "Cuenta contable",
+			"name": "Cuentas contables",
 			"item": [
 				{
 					"name": "Test",
@@ -1055,44 +1076,50 @@
 					"name": "Leadge account",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsIm5vbWJyZSI6Ikp1YW4iLCJhcGVsbGlkbyI6IkxvcGV6IiwidXNlcm5hbWUiOiJqY2h1YyIsImNvcnJlbyI6InRlc3RAY29ycmVvLmNvbSIsInJvbGVVc2VyIjoiQ0xJRU5UIiwiaWF0IjoxNjY0Mzg5ODM1LCJleHAiOjE2NjQ0MDc4MzV9.EJCVzvMNfRV46Ml8vdQsl1IaFAVXCM_dMbuHPhQP4BE",
+								"type": "default"
+							}
+						],
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "codigoCuentaContable",
-									"value": "1-1-03",
-									"type": "default"
-								},
-								{
-									"key": "nombreCuentaContable",
-									"value": "Caja chicasa",
-									"type": "default"
-								},
-								{
-									"key": "tipoCuentaContable",
+									"key": "cuenta",
 									"value": "1",
 									"type": "default"
 								},
 								{
-									"key": "padreCuentaContable",
-									"value": "1-1",
+									"key": "nombreCuenta",
+									"value": "Activo",
 									"type": "default"
 								},
 								{
-									"key": "nivelCuentaContable",
-									"value": "3",
+									"key": "concentra",
+									"value": "1",
 									"type": "default"
 								},
 								{
-									"key": "recibePartidasCuentaContable",
-									"value": "2",
+									"key": "resultado",
+									"value": "B",
+									"type": "default"
+								},
+								{
+									"key": "nivel",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "detalle",
+									"value": "M",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/cuenta/newCuentaContable/3",
+							"raw": "localhost:3000/cuenta/newCuentaContable/4",
 							"host": [
 								"localhost"
 							],
@@ -1100,7 +1127,7 @@
 							"path": [
 								"cuenta",
 								"newCuentaContable",
-								"3"
+								"4"
 							]
 						}
 					},
@@ -1113,7 +1140,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIzLCJub21icmUiOiJkYXNhIiwiYXBlbGxpZG8iOiJkYXNkIiwidXNlcm5hbWUiOiJuaW5ldGgiLCJjb3JyZW8iOiJvc21hbkB0dXJib2Nhc2guY29tLmd0Iiwicm9sZVVzZXIiOiJDTElFTlQiLCJpYXQiOjE2NjQzMTI3MjYsImV4cCI6MTY2NDMzMDcyNn0.B0NqtEY6PnGbPeyjDzMr0mRf4qTPsr1RD2gkUqOu06s",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6Im5pbmV0aCIsImNvcnJlbyI6InRlc3RAY29ycmVvLmNvbSIsInJvbGVVc2VyIjoiQ0xJRU5UIiwiaWF0IjoxNjY0Mzg0ODM3LCJleHAiOjE2NjQ0MDI4Mzd9.wzSqTIWWRHwQP6YN_hEWwUtwAXelvGjxJT2V7yNKF8I",
 								"type": "default"
 							}
 						],
@@ -1126,6 +1153,143 @@
 							"path": [
 								"cuenta",
 								"cuentasContables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Leadge account",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsIm5vbWJyZSI6Ikp1YW4iLCJhcGVsbGlkbyI6IkxvcGV6IiwidXNlcm5hbWUiOiJqY2h1YyIsImNvcnJlbyI6InRlc3RAY29ycmVvLmNvbSIsInJvbGVVc2VyIjoiQ0xJRU5UIiwiaWF0IjoxNjY0Mzg5ODM1LCJleHAiOjE2NjQ0MDc4MzV9.EJCVzvMNfRV46Ml8vdQsl1IaFAVXCM_dMbuHPhQP4BE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cuenta",
+									"value": "11",
+									"type": "default"
+								},
+								{
+									"key": "nombreCuenta",
+									"value": "Cuentas por cobrar",
+									"type": "default"
+								},
+								{
+									"key": "concentra",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "resultado",
+									"value": "B",
+									"type": "default"
+								},
+								{
+									"key": "nivel",
+									"value": "3",
+									"type": "default"
+								},
+								{
+									"key": "detalle",
+									"value": "M",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/cuenta/putCuentaContable/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cuenta",
+								"putCuentaContable",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Leadge by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsIm5vbWJyZSI6Ikp1YW4iLCJhcGVsbGlkbyI6IkxvcGV6IiwidXNlcm5hbWUiOiJqY2h1YyIsImNvcnJlbyI6InRlc3RAY29ycmVvLmNvbSIsInJvbGVVc2VyIjoiQ0xJRU5UIiwiaWF0IjoxNjY0Mzg5ODM1LCJleHAiOjE2NjQ0MDc4MzV9.EJCVzvMNfRV46Ml8vdQsl1IaFAVXCM_dMbuHPhQP4BE",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/cuenta/cuentaById/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cuenta",
+								"cuentaById",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Leadge",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsIm5vbWJyZSI6Ikp1YW4iLCJhcGVsbGlkbyI6IkxvcGV6IiwidXNlcm5hbWUiOiJqY2h1YyIsImNvcnJlbyI6InRlc3RAY29ycmVvLmNvbSIsInJvbGVVc2VyIjoiQ0xJRU5UIiwiaWF0IjoxNjY0Mzg5ODM1LCJleHAiOjE2NjQ0MDc4MzV9.EJCVzvMNfRV46Ml8vdQsl1IaFAVXCM_dMbuHPhQP4BE",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/cuenta/deleteCuenta/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cuenta",
+								"deleteCuenta",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plantilla contable maestro",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/contableMaestro/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contableMaestro",
+								"test"
 							]
 						}
 					},
