@@ -15,7 +15,8 @@ const entidadRoutes = require('../src/routes/entidad.routes');
 const impuestoAdicionalRoutes = require('../src/routes/impuestoAdicional.routes');
 const tipoMovimientoLibroComprasVentasRoutes = require('../src/routes/tipoMovimientoLibroComprasVenats.routes');
 const cuentaContableRoutes = require('../src/routes/cuentaContable.routes');
-const plantillaContableMaestro = require('../src/routes/plantillaContableMaestro.routes')
+const plantillaContableMaestro = require('../src/routes/plantillaContableMaestro.routes');
+const partidaContableMaestro = require('../src/routes/partidaContableMaestro.routes');
 
 
 //Config client
@@ -33,6 +34,7 @@ app.use('/impuesto', impuestoAdicionalRoutes);
 app.use('/tipoMovimiento', tipoMovimientoLibroComprasVentasRoutes);
 app.use('/cuenta', cuentaContableRoutes);
 app.use('/contableMaestro', plantillaContableMaestro);
+app.use('/partidaMaestro', partidaContableMaestro);
 
 //Initial routes
 app.get('/', (req, res) => {

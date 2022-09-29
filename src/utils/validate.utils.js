@@ -209,3 +209,33 @@ exports.cuentasContables = () => {
         return err;
     }
 }
+
+exports.partidasMaestro = () => {
+    try{
+        let exist = 'SELECT * FROM PartidaContableMaestro';
+        return new Promise((resolve, reject) => {
+            db.query(exist, (err, resu) => {
+                if(err) throw err;
+                return resolve(resu)
+            })
+        })
+    }catch(err) {
+        console.log(err);
+        return err;
+    }
+}
+
+exports.empresaPartida = () => {
+    try{
+        let exist = 'SELECT codigoEmpresa FROM PartidaContableMaestro';
+        return new Promise((resolve, reject) => {
+            db.query(exist, (err, resu) => {
+                if(err) throw err;
+                return resolve(resu)
+            })
+        })
+    }catch(err) {
+        console.log(err);
+        return err;
+    }
+}

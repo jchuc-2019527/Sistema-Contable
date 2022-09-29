@@ -10,7 +10,8 @@ exports.newPlantillaContrableMaestro = async (req, res) => {
     try{
         const body = req.body;
         const data = {
-
+            codigoEmpresa: body.codigoEmpresa,
+            
         };
     }catch(err) {
         console.log(err)
