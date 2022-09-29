@@ -17,6 +17,7 @@ const tipoMovimientoLibroComprasVentasRoutes = require('../src/routes/tipoMovimi
 const cuentaContableRoutes = require('../src/routes/cuentaContable.routes');
 const plantillaContableMaestro = require('../src/routes/plantillaContableMaestro.routes');
 const partidaContableMaestro = require('../src/routes/partidaContableMaestro.routes');
+const partidaContableDetalle =require('../src/routes/partidaContableDetalle.routes');
 
 
 //Config client
@@ -35,6 +36,7 @@ app.use('/tipoMovimiento', tipoMovimientoLibroComprasVentasRoutes);
 app.use('/cuenta', cuentaContableRoutes);
 app.use('/contableMaestro', plantillaContableMaestro);
 app.use('/partidaMaestro', partidaContableMaestro);
+app.use('/partidaDetalle', partidaContableDetalle);
 
 //Initial routes
 app.get('/', (req, res) => {

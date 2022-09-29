@@ -226,7 +226,7 @@ exports.partidasMaestro = () => {
 }
 
 exports.empresaPartida = () => {
-    try{
+    try{    
         let exist = 'SELECT codigoEmpresa FROM PartidaContableMaestro';
         return new Promise((resolve, reject) => {
             db.query(exist, (err, resu) => {
