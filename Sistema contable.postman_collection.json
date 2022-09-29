@@ -1140,7 +1140,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6Im5pbmV0aCIsImNvcnJlbyI6InRlc3RAY29ycmVvLmNvbSIsInJvbGVVc2VyIjoiQ0xJRU5UIiwiaWF0IjoxNjY0Mzg0ODM3LCJleHAiOjE2NjQ0MDI4Mzd9.wzSqTIWWRHwQP6YN_hEWwUtwAXelvGjxJT2V7yNKF8I",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsIm5vbWJyZSI6Ikp1YW4iLCJhcGVsbGlkbyI6IkxvcGV6IiwidXNlcm5hbWUiOiJqY2h1YyIsImNvcnJlbyI6InRlc3RAY29ycmVvLmNvbSIsInJvbGVVc2VyIjoiQ0xJRU5UIiwiaWF0IjoxNjY0NDg2NjM3LCJleHAiOjE2NjQ1MDQ2Mzd9.Ul8CkgaRw5f6m13jTMvxoWzXJ7ACiwMlyJXYbLb_EeE",
 								"type": "default"
 							}
 						],
@@ -1290,6 +1290,268 @@
 							"path": [
 								"contableMaestro",
 								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Partida Contable maestro",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/partidaMaestro/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"partidaMaestro",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account part",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "numeroPartidaContable",
+									"value": "3",
+									"type": "default"
+								},
+								{
+									"key": "fechaPartidaContable",
+									"value": "2022-09-02",
+									"type": "default"
+								},
+								{
+									"key": "montoDebePartidaContable",
+									"value": "100",
+									"type": "default"
+								},
+								{
+									"key": "montoHaberPartidaContable",
+									"value": "100",
+									"type": "default"
+								},
+								{
+									"key": "caracteristicas",
+									"value": "prueba 3",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/partidaMaestro/newPartidaMaestro/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"partidaMaestro",
+								"newPartidaMaestro",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/partidaMaestro/partidasMaestro",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"partidaMaestro",
+								"partidasMaestro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/partidaMaestro/partidaById/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"partidaMaestro",
+								"partidaById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account part",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "numeroPartidaContable",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "fechaPartidaContable",
+									"value": "2022-09-10",
+									"type": "default"
+								},
+								{
+									"key": "montoDebePartidaContable",
+									"value": "500",
+									"type": "default"
+								},
+								{
+									"key": "montoHaberPartidaContable",
+									"value": "500",
+									"type": "default"
+								},
+								{
+									"key": "caracteristicas",
+									"value": "Prueba 2 edited",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/partidaMaestro/putPartida/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"partidaMaestro",
+								"putPartida",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account part",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/partidaMaestro/deletePartida/5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"partidaMaestro",
+								"deletePartida",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Partida contable detalle",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/partidaDetalle/testD",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"partidaDetalle",
+								"testD"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account part detail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "codigoPartidaContableMaestro",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "codigoCuentaContable",
+									"value": "32",
+									"type": "default"
+								},
+								{
+									"key": "numeroPartidaContable",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "tipoMovimientoPartidaContable",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "montoCuentaContable",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "correlativoPartidaContable",
+									"value": "1001",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/partidaDetalle/newPartidaDetalle/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"partidaDetalle",
+								"newPartidaDetalle",
+								"1"
 							]
 						}
 					},
