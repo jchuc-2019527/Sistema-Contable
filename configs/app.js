@@ -27,7 +27,7 @@ app.use(helmet({}));
 app.use(cors());
 
 
-//Usege routes client
+//Usage routes client
 app.use('/user', userRoutes);
 app.use('/empresaMaestro', empresaMaestroRoutes);
 app.use('/entidad', entidadRoutes);

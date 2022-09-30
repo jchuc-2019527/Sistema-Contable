@@ -4,7 +4,7 @@ const db = require('../../configs/pooldb');
 const { validateData, empresasMaestros, partidasMaestro } = require('../utils/validate.utils');
 
 exports.test = (req, res) => {
-    return res.status(200).send({Message: 'Test partidaMaestro controller is running'})
+    return res.status(200).send({Message: 'Test partidaMaestro controller is running'});
 }
 
 exports.newPartidaMaestro = async(req, res) => {
@@ -46,8 +46,8 @@ exports.partidasMaestro = async(req, res) => {
             return res.status(200).send({Message: 'Accounts part found', resu});
         })
     }catch(err) {
-        console.log(err)
-        return res.status(500).send({Message: 'Error en el servidor partidasContables'})
+        console.log(err);
+        return res.status(500).send({Message: 'Error en el servidor partidasContables'});
     }
  }
 
@@ -57,13 +57,12 @@ exports.partidaById = async(req, res) => {
         const partidaExist = await partidasMaestro();
         const partida = partidaExist.find(partida => partida.codigoPartidaContableMaestro == partidaId);
         if(!partida) return res.status(404).send({Message: 'Accound part not found'});
-        return res.status(200).send({Message: 'Account part found', partida})
+        return res.status(200).send({Message: 'Account part found', partida});
     }catch(err) {
-        console.log(err)
-        return res.status(500).send({Message: 'Error en el servidor partidaById'})
+        console.log(err);
+        return res.status(500).send({Message: 'Error en el servidor partidaById'});
     }
 }
-
 
 exports.putPartida = async(req, res) => {
     try{
@@ -84,7 +83,7 @@ exports.putPartida = async(req, res) => {
          let updateEmpresa = `UPDATE PartidaContableMaestro SET numeroPartidaContable = '${data.numeroPartidaContable}', fechaPartidaContable = '${data.fechaPartidaContable}', montoDebePartidaContable = '${data.montoDebePartidaContable}', montoHaberPartidaContable = '${data.montoHaberPartidaContable}', caracteristicas = '${data.caracteristicas}' WHERE codigoPartidaContableMaestro = ${partidaId}`;
         await db.query(updateEmpresa, data, (err, resu) => {
             if(err) throw err;
-            return res.status(200).send({Message: 'Account part updated', data})
+            return res.status(200).send({Message: 'Account part updated', data});
         })
     }
     }catch(err) {
@@ -105,10 +104,10 @@ exports.deletePartida = async(req, res) => {
                 return res.status(200).send({Message: 'Account part deleted', partida});
             })
         }else{
-            return res.status(404).send({Message: 'Account not found'})
+            return res.status(404).send({Message: 'Account not found'});
         }
     }catch(err) {
-        console.log(err)
-        return res.status(500).send({Message: 'Error en el servidor deletePartida'})
+        console.log(err);
+        return res.status(500).send({Message: 'Error en el servidor deletePartida'});
     }
 }

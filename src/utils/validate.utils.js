@@ -239,3 +239,18 @@ exports.empresaPartida = () => {
         return err;
     }
 }
+
+exports.detallesPartida = () => {
+    try{
+        let detalle = 'SELECT * FROM PartidaContableDetalle';
+        return new Promise((resolve, reject) => {
+            db.query(detalle, (err, resu) => {
+                if(err) throw err;
+                return resolve(resu)
+            })
+        })
+    }catch(err) {
+        console.log(err)
+        return err;
+    }
+}
