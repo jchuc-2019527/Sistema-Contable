@@ -254,3 +254,18 @@ exports.detallesPartida = () => {
         return err;
     }
 }
+
+exports.periodos = async(req, res) => {
+    try{
+        let periodos = 'SELECT * FROM Periodo';
+        return new Promise((resolve, reject) => {
+         db.query(periodos, (err, resu) => {
+            if(err) throw err;
+            return resolve(resu);
+         })  
+        })
+    }catch(err) {
+        console.log(err);
+        return err;
+    }
+}
