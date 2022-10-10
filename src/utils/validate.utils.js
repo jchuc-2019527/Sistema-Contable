@@ -269,3 +269,18 @@ exports.periodos = async(req, res) => {
         return err;
     }
 }
+
+exports.activos = () =>{
+    try{
+        const exist = 'SELECT * FROM ActivoFijo';
+        return new Promise ((resolve, reject) =>{
+            db.query(exist, (err, resul) => {
+                if(err) throw err;
+                return resolve(resul);
+            })
+        })
+    }catch(err) {
+        console.log(err);
+        return err;
+    }
+}

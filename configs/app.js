@@ -19,6 +19,7 @@ const plantillaContableMaestro = require('../src/routes/plantillaContableMaestro
 const partidaContableMaestro = require('../src/routes/partidaContableMaestro.routes');
 const partidaContableDetalle =require('../src/routes/partidaContableDetalle.routes');
 const periodoRoutes = require('../src/routes/periodo.routes');
+const activoFijoRoutes = require('../src/routes/activoFijo.routes');
 
 //Config client
 app.use(bodyParser.urlencoded({extended: false}));
@@ -38,6 +39,7 @@ app.use('/contableMaestro', plantillaContableMaestro);
 app.use('/partidaMaestro', partidaContableMaestro);
 app.use('/partidaDetalle', partidaContableDetalle);
 app.use('/periodo', periodoRoutes);
+app.use('/activoFijo', activoFijoRoutes);
 
 //Initial routes
 app.get('/', (req, res) => {
