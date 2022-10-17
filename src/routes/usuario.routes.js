@@ -14,5 +14,6 @@ api.put('/putUser/:idUser', [auth.ensureAuth],user.putUser);
 api.delete('/deleteUser/:idUser',[auth.ensureAuth, auth.isAdmin], user.deleteUser);
 api.get('/userById/:idUser', [auth.ensureAuth], user.userById);
 api.get('/usersByCompany/:idEmpre', user.usersByCompany);
+api.get('/profile', [auth.ensureAuth], user.myProfile)
 
 module.exports = api;

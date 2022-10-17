@@ -79,6 +79,19 @@ exports.login = async(req, res) => {
   }
 }
 
+exports.myProfile = async(req, res) =>{
+  try{
+    const myUser = req.user.sub;
+    const user = await usersExists();
+    const exiUser =  user.find(user => user.codigoUsuario === myUser)
+    if(exiUser) return res.status(200).send({Message: 'User found', exiUser});
+    return res.status(404).send({Message: 'User not exists register'});
+  }catch(err) {
+    console.log(err);
+    return res.status(500).send({Error: 'Error en el servidor myProfile'});
+  }
+}
+
 exports.putUser = async(req, res) => {
   try{
     const userId = req.params.idUser;
