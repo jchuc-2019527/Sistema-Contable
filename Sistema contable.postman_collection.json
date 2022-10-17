@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "299e3cab-fa98-455d-934a-c29c27a61c37",
+		"_postman_id": "8fde993f-d246-402b-82d7-ab1416215cab",
 		"name": "Sistema contable",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19806241"
 	},
 	"item": [
 		{
@@ -305,7 +306,7 @@
 							"urlencoded": [
 								{
 									"key": "username",
-									"value": "jchuc",
+									"value": "test",
 									"type": "text"
 								},
 								{
@@ -1551,6 +1552,161 @@
 							"path": [
 								"partidaDetalle",
 								"newPartidaDetalle",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ActivoFijo",
+			"item": [
+				{
+					"name": "TestActivoFijo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/activoFijo/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"activoFijo",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActivoFijo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJ0ZXN0QGNvcnJlby5jb20iLCJyb2xlVXNlciI6IkNMSUVOVCIsImlhdCI6MTY2NTM2MDcyMSwiZXhwIjoxNjY1Mzc4NzIxfQ.8WCaOcEWlxOAftPXDJ8qFuF1ZnzaNxCstMiK1_zJqdk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "fechaAdquisicion",
+									"value": "2022-02-02",
+									"type": "text"
+								},
+								{
+									"key": "numeroDocumento",
+									"value": "123431",
+									"type": "text"
+								},
+								{
+									"key": "NITEntidad",
+									"value": "64112-8",
+									"type": "text"
+								},
+								{
+									"key": "codigoTipo",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "descripcionActivoFijo",
+									"value": "Es una computadora",
+									"type": "text"
+								},
+								{
+									"key": "cantidadActivoFijo",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "valorUnitario",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "valorTotal",
+									"value": "20000",
+									"type": "text"
+								},
+								{
+									"key": "valorActual",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "depreciacionAcumulada",
+									"value": "400",
+									"type": "text"
+								},
+								{
+									"key": "caracteristicasActivoFijo",
+									"value": "Computadora ryzen",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/activoFijo/newActivoFijo/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"activoFijo",
+								"newActivoFijo",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activos usuario logueado",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5vbWJyZSI6InRlc3QiLCJhcGVsbGlkbyI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJjb3JyZW8iOiJ0ZXN0QGNvcnJlby5jb20iLCJyb2xlVXNlciI6IkNMSUVOVCIsImlhdCI6MTY2NTM2MDcyMSwiZXhwIjoxNjY1Mzc4NzIxfQ.8WCaOcEWlxOAftPXDJ8qFuF1ZnzaNxCstMiK1_zJqdk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/activoFijo/activosFijos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"activoFijo",
+								"activosFijos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activo fijo by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/activoFijo/activoId/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"activoFijo",
+								"activoId",
 								"1"
 							]
 						}
