@@ -28,7 +28,7 @@ exports.newEmpresaMaestro = async(req, res) => {
                     return res.status(201).send({message: 'Buisiness created', data});
                 })
             }else{
-                return res.status(409).send({message: 'Business already exist'})
+                return res.status(409).send({message: 'El nombre de la empresa ya existe.'})
             }
         }else{
             return res.status(402).send(msg);

@@ -27,9 +27,10 @@ exports.newImpuesto = async(req, res) => {
                     return res.status(201).send({message: 'Taxes created', data});
                 })
             }else{
-                return res.status(409).send({message: 'Taxes alredy exist'});
+                return res.status(409).send({message: 'El impuesto ya existe'});
             }
         }else{
+             if(!data.nombreImpuesto || !data.descripcionImpuesto || data.valorImpuesto) return res.status(400).send({message: 'Por favor complete todos los campos'})
             return res.status(402).send(msg);
         }
     }catch(err) {
