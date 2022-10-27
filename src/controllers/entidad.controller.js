@@ -25,7 +25,7 @@ exports.newEntity = async(req, res) => {
                     return res.status(201).send({message: 'Entity created', data});
                 })
             }else {
-                return res.status(409).send({message: 'Entity already use'});
+                return res.status(409).send({message: 'Nombre de la entidad ya esta en uso'});
             }
         }else{
             return res.status(402).send(msg);
