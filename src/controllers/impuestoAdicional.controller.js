@@ -95,6 +95,16 @@ exports.taxeById = async(req, res) => {
     }
 }
 
+exports.impuestosPorEmpresa = async(req, res) => {
+    try{
+        
+    }catch(err) {
+        console.log(err);
+        return res.status(500).send({Message: 'Error en el servidor de impuestosPorEmpresa'});
+    }
+}
+
+
 exports.deleteTaxe = async(req, res) => {
     try{
         let taxeId = req.params.idTaxe;

@@ -11,7 +11,7 @@ api.post('/newEmpresaMaestro', [auth.ensureAuth],empresaMaestro.newEmpresaMaestr
 api.put('/putEmpresaMaestro/:idEmpresa',[auth.ensureAuth, auth.isAdmin],empresaMaestro.putEmpresaMaestro);
 api.get('/empresasMaestros', empresaMaestro.empresasMaestros);
 api.get('/empresaById/:idEmpresa', [auth.ensureAuth],empresaMaestro.empresaById);
-api.delete('/deleteEmpresa/:idEmpresa', [auth.ensureAuth,],empresaMaestro.deleteEmpresa);
+api.delete('/deleteEmpresa/:idEmpre', [auth.ensureAuth,],empresaMaestro.deleteEmpresa);
 
 
 module.exports = api;

@@ -98,7 +98,7 @@ exports.empresaById = async(req, res) => {
 
 exports.deleteEmpresa = async(req, res) => {
     try{
-        const empresaId = req.params.idEmpresa;
+        const empresaId = req.params.idEmpre;
         const empresaExist = await empresasMaestros();
         const empresa = empresaExist.find(empresa => empresa.codigoEmpresa == empresaId);
         if(!empresa) {

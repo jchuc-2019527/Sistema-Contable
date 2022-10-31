@@ -36,11 +36,11 @@ exports.newUser = async(req, res) => {
               let inner = ` select EmpresaMaestro.nombreEmpresa  FROM EmpresaMaestro INNER JOIN Usuario ON EmpresaMaestro.codigoEmpresa = usuario.codigoUsuario WHERE EmpresaMaestro.codigoEmpresa = ${id}`;
               db.query(inner, (err, resul) => {
                 if(err) throw err;
-                return res.status(201).send({Message: 'User created', resul, data});
+                return res.status(201).send({Message: 'Usuario creado satisfactoriamente', resul, data});
               })
             })
           }else{
-            return res.status(409).send({message: 'User already use'})
+            return res.status(403).send({message: 'User already use'})
           }
         }else{
            return res.status(402).send(msg);
@@ -130,6 +130,7 @@ exports.putUser = async(req, res) => {
 exports.deleteUser = async(req, res) => {
   try{
     const userId = req.params.idUser;
+    console.log(typeof(userId))
     const userExist = await usersExists();
     const user = userExist.find(user => user.codigoUsuario == userId);
    if(!user) {
@@ -178,7 +179,8 @@ exports.users = async(req, res) => {
 
 exports.usersByCompany = async(req, res) => {
   try{
-    let idEmpre = req.params.idEmpre;
+    let idEmpre = req.params.idEmpre; 
+    console.log(typeof(idEmpre  ))
     let usersCompany = `SELECT * from Usuario WHERE codigoEmpresa = ${idEmpre}`;
     await db.query(usersCompany, (err, resu) => {
       if(err) throw err;
@@ -189,3 +191,4 @@ exports.usersByCompany = async(req, res) => {
     return res.status(500).send({Message: 'Error en el servidor usersByCompany'});
   }
 }
+
