@@ -8,6 +8,7 @@ exports.createToken = async(user) =>{
     try{
         const payload = {
             sub: user.codigoUsuario,
+            codigoEmpresa: user.codigoEmpresa,
             nombre: user.nombre,
             apellido: user.apellido,
             username: user.username,

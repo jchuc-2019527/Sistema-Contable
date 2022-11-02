@@ -7,6 +7,6 @@ const auth = require('../services/authenticated.services');
 const api = express();
 
 api.get('/test', periodo.test);
-api.post('/newPeriodo/:idEmpre', periodo.newPeriodo);
+api.post('/newPeriodo', [auth.ensureAuth], periodo.newPeriodo);
 
 module.exports = api;

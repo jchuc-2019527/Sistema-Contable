@@ -2,6 +2,7 @@
 
 const db = require('../../configs/pooldb');
 const { validateData, periodos } = require('../utils/validate.utils');
+const moment = require('moment')
 
 exports.test = (req, res) => {
     return res.status(200).send({Message: 'Test periodo controller is running'});
@@ -11,17 +12,13 @@ exports.newPeriodo = async(req, res) => {
     try{
         const body = req.body;
         const data = {
-            codigoEmpresa: req.params.idEmpresa,
-            estadoPeriodo: body.estadoPeriodo,
-            fechaInicial: body.fechaInicial,
-            fechaFinal: body.fechaFinal
+            codigoEmpresa: req.user.codigoEmpresa,
+            estadoPeriodo: true,
+            fechaInicial: moment(body.fechaFinal).format('DD/MM/YYYY'),
+            fechaFinal: moment(body.fechaFinal).format('DD/MM/YYYY')
         };
         let msg =validateData(data);
         if(!msg) {
-            let empreExi = req.params.idEmpre;
-            let periodoId = await periodos();
-            let periodo = periodoId.find(periodo => periodo.codigoEmpresa == empreExi);
-            if(!periodo) return res.status(404).send({Message: 'Bisiness not found'});
             let newPeriodo = 'INSERT INTO Periodo SET ?';
             await db.query(newPeriodo, data,(err, resu) => {
                 if(err) throw err;
