@@ -130,7 +130,6 @@ exports.putUser = async(req, res) => {
 exports.deleteUser = async(req, res) => {
   try{
     const userId = req.params.idUser;
-    console.log(typeof(userId))
     const userExist = await usersExists();
     const user = userExist.find(user => user.codigoUsuario == userId);
    if(!user) {

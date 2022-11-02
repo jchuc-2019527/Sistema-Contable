@@ -107,7 +107,7 @@ exports.impuestosPorEmpresa = async(req, res) => {
 
 exports.deleteTaxe = async(req, res) => {
     try{
-        let taxeId = req.params.idTaxe;
+        let taxeId = req.params.idTaxe
         let taxeExist = await impuestos();
         let taxe = taxeExist.find(taxe => taxe.codigoValorImpuesto == taxeId);
         if(!taxe) {

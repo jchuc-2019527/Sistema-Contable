@@ -26,7 +26,7 @@ exports.newTipoMov = async(req, res) => {
                     return res.status(201).send({Message: 'Type movement created', data});
                 })
             }else{
-                return res.status(409).send({Message: 'Movement name exist'});
+                return res.status(402).send({Message: 'Nombre del novimiento ya existe'});
             }
         }else{
             return res.status(402).send(msg);
