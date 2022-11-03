@@ -179,7 +179,6 @@ exports.users = async(req, res) => {
 exports.usersByCompany = async(req, res) => {
   try{
     let idEmpre = req.params.idEmpre; 
-    console.log(typeof(idEmpre  ))
     let usersCompany = `SELECT * from Usuario WHERE codigoEmpresa = ${idEmpre}`;
     await db.query(usersCompany, (err, resu) => {
       if(err) throw err;

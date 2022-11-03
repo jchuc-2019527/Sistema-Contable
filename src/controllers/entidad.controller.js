@@ -121,12 +121,11 @@ exports.entities = async (req, res) => {
 exports.entityById = async (req, res) => {
   try {
     const entidadId = req.params.idEntity;
-    const entidadExist = await entities();
-    const entidad = entidadExist.find(
-      (entidad) => entidad.codigoNIT == req.params.idEntity
-    );
-    if (!entidad) return res.status(404).send({ message: "Entity not found" });
-    return res.status(200).send({ message: "Entity found", entidad });
+    const entityId =  `SELECT * from Entidad WHERE codigoNIT = ${entidadId}`;
+    await db.query(entityId, (err, resu) => {
+      if(err) throw err;
+      return res.status(200).send({message: 'Entidad encontrada', resu})
+    })
   } catch (err) {
     console.log(err);
     return res.status(500).send({ message: "Error en el servidor entityById" });

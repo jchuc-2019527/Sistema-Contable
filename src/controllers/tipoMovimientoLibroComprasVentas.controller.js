@@ -46,7 +46,7 @@ exports.putMovimiento = async(req, res) => {
         const already = nameMov.find(name => name.nombreMovimiento === req.body.nombreMovimiento);
         if(!movFind) return res.status(404).send({Message: 'Movement not found'});
         if(already) {
-            return res.status(409).send({Message: 'Movement exist'});
+            return res.status(409).send({Message: 'Nombre del movimineto ya existe'});
         }else{
             const body = req.body;
             const data = {
@@ -82,10 +82,11 @@ exports.movements = async(req, res) => {
 exports.movementById = async(req, res) => {
     try{    
         let moveId = req.params.idMove;
-        const nameMov = await movimientos();
-        const movimiento = nameMov.find(id => id.codigoMovimiento == moveId);
-        if(!movimiento) return res.status(404).send({Message: 'Movement not found'});
-        return res.status(302).send({Message: 'Type movement found', movimiento});
+        const movementId = `SELECT * from TipoMovimientoLibroComprasVentas WHERE codigoMovimiento = ${moveId}`;
+        await db.query(movementId, (err, resu) => {
+            if(err) throw err;
+            return res.status(200).send({message: 'Tipo Movimiento encontrado', resu})
+        })
     }catch(err) {
         console.log(err);
         return res.status(500).send({Message: 'Error en el servidor movementById'});

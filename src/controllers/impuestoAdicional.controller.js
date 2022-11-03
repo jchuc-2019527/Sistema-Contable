@@ -49,7 +49,7 @@ exports.putImpuesto = async(req, res) => {
 
         if(!impuesto) return res.status(404).send({message: 'Taxes not found'});
         if(already) {
-            return res.status(409).send({message: 'Taxes alredy exist'});
+            return res.status(402).send({message: 'Nombre de impuesto ya existe'});
         }else {
             const body = req.body;
             const data = {
@@ -85,10 +85,11 @@ exports.taxes = async(req, res) => {
 exports.taxeById = async(req, res) => {
     try{
         let taxeId = req.params.idTaxe;
-        let taxesExists = await impuestos();
-        let impuesto = taxesExists.find(impuesto => impuesto.codigoValorImpuesto == taxeId);
-        if(!impuesto) return res.status(404).send({Message: 'Taxe not found'});
-        return res.status(302).send({Message: 'Taxe found', impuesto});
+        let userById = `SELECT * from ImpuestoAdicional WHERE codigoValorImpuesto = ${taxeId}`;
+        await db.query(userById, (err, resu) => {
+            if(err) throw err;
+            return res.status(200).send({message: 'Impuesto encontrado', resu})
+        })
     }catch(err) {
         console.log(err);
         return res.status(500).send({Message: 'Error en el servidor taxesById'});
@@ -109,7 +110,7 @@ exports.deleteTaxe = async(req, res) => {
     try{
         let taxeId = req.params.idTaxe
         let taxeExist = await impuestos();
-        let taxe = taxeExist.find(taxe => taxe.codigoValorImpuesto == taxeId);
+        let taxe = taxeExist.find(taxe => String(taxe.codigoValorImpuesto) === String(taxeId));
         if(!taxe) {
             return res.status(404).send({Message: 'Taxe not found'});
         }else{
